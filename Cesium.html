@@ -7,8 +7,8 @@
 
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Grayscale - Start Bootstrap Theme</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <title>Building Information Model Jembatan Baru UGM</title>
+  <link rel="icon" type="image/x-icon" href="assets/Bridge.ico" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <!-- Google fonts-->
@@ -36,20 +36,12 @@
 <body>
 
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-            </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="margin-top: 15px;">
+    <div class="container px-4 px-lg-5 d-flex justify-content-center">
+      <a class="btn btn-primary" href="index.html">Kembali Ke Beranda</a>
     </div>
   </nav>
+
 
   <div id="cesiumContainer"></div>
   <button id="toggle-fpv">W untuk Maju <br> S untuk Mundur <br> A untuk Kiri <br>D untuk Kanan <br>Q untuk Atas/Naik <br>E untuk Bawah/Turun <br></button>
@@ -82,7 +74,13 @@
 
     // Fly the camera to Denver, Colorado at the given longitude, latitude, and height.
     viewer.camera.flyTo({
-    destination: Cesium.Cartesian3.fromDegrees(110.370740, -7.762435, 400) 
+    destination: Cesium.Cartesian3.fromDegrees(110.370836, -7.763631, 250),
+    orientation: {
+        heading: Cesium.Math.toRadians(0), // Angle of rotation around the vertical axis (eastward)
+        pitch: Cesium.Math.toRadians(-30), // Angle from the horizon (downward)
+        roll: 0 // Rotation around the camera's direction axis
+    },
+    duration: 3 // Optional: Fly to the destination in 3 seconds
     });
 
     // First Person View Camera--------------------------------------------------------------------------
